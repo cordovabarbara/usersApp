@@ -1,4 +1,4 @@
-import axios, { Axios } from "axios"
+import axios from "axios"
 import { useState } from "react"
 
 const useUserCrud = () => {
@@ -13,16 +13,34 @@ const useUserCrud = () => {
             .cath(err => console.log(err))
     }
 
-    const createNewUser = () =>{
+    const createNewUser = data =>{
         axios.post(url, data)
         .then(res => getAllUsers())
         .cath(err => console.log(err))
     }
 
+    const deleteUserById = id =>{
+        const urlDelete =`${url}${id}/`
+        axios.delete(urlDelete)
+        .then(res => getAllUsers())
+        .cath(err => console.log(err))
+    }
+
+    const updateUserById = (id, data) => {
+        const urlUpdate =`${url}${id}/`
+        axios.patch(urlUpdate, data)
+        .then(res =>getAllUsers())
+        .cath(err => console.log(err))
+    }
+
+    
 
     return{
         users,
-        getAllUsers
+        getAllUsers,
+        createNewUser,
+        deleteUserById,
+        updateUserById,
     }
     
 }
