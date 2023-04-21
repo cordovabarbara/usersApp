@@ -33,8 +33,6 @@ const useUserCrud = () => {
         .catch(err => console.log(err))
     }
 
-    
-
     return{
         users,
         getAllUsers,
