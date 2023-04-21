@@ -1,11 +1,14 @@
 
 
-const UserCard = ({ user, deleteUserById }) => {
+const UserCard = ({ user, deleteUserById, updateUserById }) => {
 
     const handleDelete = () => {
         deleteUserById(user.id)
     }
 
+    const handleUpdate = () => {
+        updateUserById(user.id)
+    }
 
 return (
 <div>
@@ -18,6 +21,10 @@ return (
         <button onClick={handleDelete}>
             <i className="bx bx-trash"></i>
         </button>
+        <button onClick={handleUpdate}>
+            <i className="bx bx-edit-alt"></i>
+        </button>
+    
     </footer>
 </div>
 )

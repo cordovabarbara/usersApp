@@ -6,6 +6,8 @@ import FormUser from './components.jsx/FormUser'
 
 function App() {
 
+  const [updateInfo, setUpdateInfo] = useState()
+
   const {
     users,
     getAllUsers,
@@ -22,6 +24,11 @@ function App() {
   return (
     <div className="App">
       <h2>Users</h2>
+      <FormUser
+        createNewUser={createNewUser}
+        updateInfo={updateInfo}
+        />
+
     <div>
       {
         users?.map(user => {
@@ -29,6 +36,8 @@ function App() {
             key={user.id}
             user={user}
             deleteUserById={deleteUserById}
+            setUpdateInfo={setUpdateInfo}
+            updateUserById={updateUserById}
           />
           
         })
