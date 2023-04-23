@@ -24,10 +24,10 @@ return (
     </ul>
     <footer className="user__footer">
         <button className="user__delete user__delete" onClick={handleDelete}>
-            <i className="bx bx-trash"></i>
+            <i className="bx bxs-trash-alt"></i> 
         </button>
         <button className="user__btn user__update" onClick={handleUpdate}>
-            <i className="bx bx-edit-alt"></i>
+            <i class='bx bxs-edit'></i>
         </button>
     </footer>
 </div>
