@@ -1,4 +1,4 @@
-
+import './styles/userCard.css'
 
 const UserCard = ({ user, deleteUserById, setUpdateInfo }) => {
 
@@ -23,11 +23,11 @@ return (
         <span className="user__value">{user.birthday}</span></li>
     </ul>
     <footer className="user__footer">
-        <button className="user__delete user__delete" onClick={handleDelete}>
-            <i className="bx bxs-trash-alt"></i> 
+        <button className="user__btn user__delete" onClick={handleDelete}>
+            <i className="bx bxs-trash-alt user__icon"></i> 
         </button>
         <button className="user__btn user__update" onClick={handleUpdate}>
-            <i class='bx bxs-edit'></i>
+            <i class='bx bxs-edit user__icon'></i>
         </button>
     </footer>
 </div>

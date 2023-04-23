@@ -7,6 +7,7 @@ import FormUser from './components/FormUser'
 function App() {
 
   const [updateInfo, setUpdateInfo] = useState()
+  const [formClose, setFormClose] = useState(true)
 
   const {
     users,
@@ -20,18 +21,26 @@ function App() {
     getAllUsers()
   }, [])
   
+  const handleOpenForm = () =>{
+    setFormClose(false)
+  }
 
   return (
-    <div className="App">
-      <h2>Users</h2>
+    <div className="app">
+      <header className='app__header'>
+      <h1 className='app__title'>Users</h1>
+      <button onClick={handleOpenForm} className='app__btn'> Create new user</button>
+      </header>
       <FormUser
         createNewUser={createNewUser}
         updateInfo={updateInfo}
         updateUserById={updateUserById}
         setUpdateInfo={setUpdateInfo}
+        setFormClose={setFormClose}
+        formClose={formClose}
         />
 
-    <div>
+    <div className='app__container'>
       {
         users?.map(user => (
           <UserCard
