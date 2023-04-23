@@ -34,7 +34,7 @@ const useUserCrud = () => {
     }
 
 //UPDATE
-    const updateUserById = (data, id) => {
+    const updateUserById = (id, data) => {
         const urlUpdate =`${url}${id}/`
         axios.patch(urlUpdate, data)
         .then(res => getAllUsers())

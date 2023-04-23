@@ -1,13 +1,13 @@
 
 
-const UserCard = ({ user, deleteUserById, updateUserById }) => {
+const UserCard = ({ user, deleteUserById, setUpdateInfo }) => {
 
     const handleDelete = () => {
         deleteUserById(user.id)
     }
 
     const handleUpdate = () => {
-        updateUserById(user.id)
+        setUpdateInfo(user)
     }
 
 return (

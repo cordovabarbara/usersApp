@@ -27,6 +27,8 @@ function App() {
       <FormUser
         createNewUser={createNewUser}
         updateInfo={updateInfo}
+        updateUserById={updateUserById}
+        setUpdateInfo={setUpdateInfo}
         />
 
     <div>
@@ -37,7 +39,6 @@ function App() {
             user={user}
             deleteUserById={deleteUserById}
             setUpdateInfo={setUpdateInfo}
-            updateUserById={updateUserById}
           />
           
         ))

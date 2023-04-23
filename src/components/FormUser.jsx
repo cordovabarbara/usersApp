@@ -26,7 +26,7 @@ const FormUser = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo }) 
   return (
     <form onSubmit={handleSubmit(submit)}>
     <div>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Email: </label>
         <input {...register('email')} type="email" id="email" />
     </div>
 
@@ -43,10 +43,10 @@ const FormUser = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo }) 
         <input {...register('last_name')} type="text" id="last_name" />
       </div>
       <div>
-        <label htmlFor="birthday">Birthday</label>
-        <input  {...register('birthdat')} type="date" id="birthday" />
+        <label htmlFor="birthday">Birthday: </label>
+        <input  {...register('birthday')} type="date" id="birthday" />
       </div>
-      <button onClick={handleSubmit(submit)}>Create</button>
+      <button>{updateInfo ? 'Update' : 'Create'}</button>
     </form>
     
   )
