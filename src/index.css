@@ -2,6 +2,10 @@
   @import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
 
     :root {
+        --background-color: #f4f4f4;
+        --second-color:white;
+        --btn-color:  #555A88;
+        --background-shadow:#0002;
 }
 
 /*----Reset ----*/
@@ -13,7 +17,7 @@
 body{
     margin: 0;
     font-family: 'Manrope', sans-serif;
-    background-color: #f4f4f4;
+    background-color:var(--background-color);
 }
 
 h1, h2, h3, h4, p, ul {

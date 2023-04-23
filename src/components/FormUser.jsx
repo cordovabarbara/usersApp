@@ -14,6 +14,7 @@ const FormUser = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo, se
     
 
     const submit = data => {
+
       if(updateInfo){
         updateUserById(updateInfo.id, data)
         setUpdateInfo()
@@ -24,14 +25,14 @@ const FormUser = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo, se
     }
 
     const handleExit = () => {
-       setFormClose(true) 
+      setFormClose(true) 
     }
 
     
   return (
     <div className={`form__container ${formClose && 'close'}`}>
     <form className='form' onSubmit={handleSubmit(submit)}>
-    <span onClick={handleExit} className='form__exit'>x</span>
+    <span onClick={handleExit} className='form__exit'>X</span>
     <h3 className='form__title'>{updateInfo ? 'Update User Information' : 'Create New User'}</h3>
     <div className='form__item'>
         <label className='form__label'htmlFor="email">Email: </label>
@@ -54,7 +55,7 @@ const FormUser = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo, se
         <label className='form__label'htmlFor="birthday">Birthday: </label>
         <input className='form__input'  {...register('birthday')} type="date" required id="birthday" />
       </div>
-      <button onClick={handleExit} className='form__btn'>{updateInfo ? 'Update' : 'Create'}</button>
+      <button  onClick={handleExit} className='form__btn'>{updateInfo ? 'Update' : 'Create'}</button>
     </form>
     </div>
   )

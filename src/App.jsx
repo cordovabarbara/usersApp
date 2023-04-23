@@ -8,6 +8,7 @@ function App() {
 
   const [updateInfo, setUpdateInfo] = useState()
   const [formClose, setFormClose] = useState(true)
+  
 
   const {
     users,
@@ -48,7 +49,10 @@ function App() {
             user={user}
             deleteUserById={deleteUserById}
             setUpdateInfo={setUpdateInfo}
+            setFormClose={setFormClose}
+
           />
+        
           
         ))
         
