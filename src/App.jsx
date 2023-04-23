@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import useUserCrud from './hooks/useUserCrud'
-import UserCard from './components.jsx/UserCard'
-import FormUser from './components.jsx/FormUser'
+import UserCard from './components/UserCard'
+import FormUser from './components/FormUser'
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
 
     <div>
       {
-        users?.map(user => {
+        users?.map(user => (
           <UserCard
             key={user.id}
             user={user}
@@ -40,7 +40,7 @@ function App() {
             updateUserById={updateUserById}
           />
           
-        })
+        ))
         
       }
     </div>

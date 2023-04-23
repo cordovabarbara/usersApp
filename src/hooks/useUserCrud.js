@@ -11,14 +11,17 @@ const useUserCrud = () => {
 //GET
     const getAllUsers = () => {
         axios.get (url)
-            .then(res => setUsers (res.data))
+            .then(res => setUsers(res.data))
             .catch(err => console.log(err))
     }
 
 //POST
     const createNewUser = data => {
         axios.post(url, data)
-        .then(() => getAllUsers())
+        .then(res => {
+            console.log(res.data)
+            getAllUsers()
+        })
         .catch(err => console.log(err))
     }
 
@@ -26,15 +29,15 @@ const useUserCrud = () => {
     const deleteUserById = id => {
         const urlDelete =`${url}${id}/`
         axios.delete(urlDelete)
-        .then(() => getAllUsers())
+        .then(res => getAllUsers())
         .catch(err => console.log(err))
     }
 
 //UPDATE
-    const updateUserById = (id, data) => {
+    const updateUserById = (data, id) => {
         const urlUpdate =`${url}${id}/`
         axios.patch(urlUpdate, data)
-        .then(() =>getAllUsers())
+        .then(res => getAllUsers())
         .catch(err => console.log(err))
     }
 
