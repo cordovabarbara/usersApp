@@ -12,13 +12,11 @@ const FormUser = ({ createNewUser, updateInfo, updateUserById, settUpdateInfo })
     }, [updateInfo])
     
 
-
     const submit = data => {
       if(updateInfo){
         updateUserById(updateInfo.id, data)
         settUpdateInfo()
-
-      }else{
+      }else {
         createNewUser(data)
       }
         reset(defaultValues)
@@ -26,7 +24,7 @@ const FormUser = ({ createNewUser, updateInfo, updateUserById, settUpdateInfo })
 
     
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(submit)}>
     <div>
         <label htmlFor="email">Email</label>
         <input {...register('email')} type="email" id="email" />
@@ -45,10 +43,10 @@ const FormUser = ({ createNewUser, updateInfo, updateUserById, settUpdateInfo })
         <input {...register('last_name')} type="text" id="last_name" />
       </div>
       <div>
-        <label htmlFor="birthday">Birthdat</label>
+        <label htmlFor="birthday">Birthday</label>
         <input  {...register('birthdat')} type="date" id="birthday" />
       </div>
-      <button>Create</button>
+      <button onClick={handleSubmit(submit)}>Create</button>
     </form>
     
   )
