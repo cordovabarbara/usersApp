@@ -1,10 +1,10 @@
 .user{
-    border:  0.05em solid grey;
+    border:  0.05em solid var(--title-color);
     width: 100%;
     max-width: 320px;
     border-radius: 0.4em;
     padding: 1rem;
-    background-color: white;
+    background-color: var(--third-color);
     transition: transform 200ms ease;
 }
 
@@ -14,13 +14,13 @@
 
 .user__name{
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin-bottom: 1em;
 }
 
 .user__list{
     display: grid;
-    gap:0.5em;
+    gap: 0.5em;
     margin-bottom: 1em;
 }
 
@@ -31,7 +31,7 @@
 }
 .user__label{
     font-size: 0.7rem;
-    color: grey;
+    color: var(--border-color);
     text-transform: uppercase;
     position: relative;
     left: 1em;
@@ -60,12 +60,12 @@
     filter: brightness(1.1);
 }
 .user__delete{
-    color: white;
-    background-color: #D93F3F;
+    color: var(--third-color);
+    background-color:var(--btn);
 }
 
 .user__update{
-    color: grey;
+    color: var( --border-color);
     border: 0.05em solid currentColor;
 }
 
