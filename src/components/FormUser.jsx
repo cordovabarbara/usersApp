@@ -3,10 +3,14 @@ import { useForm } from 'react-hook-form'
 import defaultValues from '../utilis/defaultValues'
 import { useEffect } from 'react'
 import "./styles/formUsers.css"
+import swal from 'sweetalert'
+
 
 const FormUser = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo, setFormClose, formClose }) => {
 
     const { register, handleSubmit, reset} = useForm()
+    
+
 
     useEffect(() => {
       reset(updateInfo)
@@ -18,14 +22,20 @@ const FormUser = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo, se
       if(updateInfo){
         updateUserById(updateInfo.id, data)
         setUpdateInfo()
+        
       }else {
         createNewUser(data)
-      }
         reset(defaultValues)
-    }
+        swal({
+          title:"User Created Successfully",
+          icon:"success",
+          button: "Aceptar",
+        });
+        }
+      }
 
     const handleExit = () => {
-      setFormClose(true) 
+      setFormClose(true)
     }
 
     
@@ -59,6 +69,7 @@ const FormUser = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo, se
     </form>
     </div>
   )
-}
+  }
+
 
 export default FormUser

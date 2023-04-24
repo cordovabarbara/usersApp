@@ -1,9 +1,15 @@
 import './styles/userCard.css'
 
+
 const UserCard = ({ user, deleteUserById, setUpdateInfo, setFormClose }) => {
 
     const handleDelete = () => {
         deleteUserById(user.id)
+        swal({
+            title:"User deleted Successfully",
+            icon:"warning",
+            button: "Aceptar",
+        });
     }
 
     const handleUpdate = () => {

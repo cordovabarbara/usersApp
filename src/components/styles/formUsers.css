@@ -18,7 +18,7 @@
 }
 
 .form{
-    background-color: white;
+    background-color: var(--third-color);
     width: 100%;
     max-width: 320px;
     padding: 2rem 1.5rem 2.5rem;
@@ -32,6 +32,7 @@
 .form__title{
     font-weight: 600;
     font-size: 1.4rem;
+    margin-top: 1em;
 }
 
 .form__exit{
@@ -48,8 +49,8 @@
 }
 
 .form__exit:hover{
-    background-color:#555A88;
-    color: white;
+    background-color:var(--btn-color);
+    color: var(--third-color);
     font-weight: 600;
 }
 
@@ -73,7 +74,7 @@
 .form__btn{
     padding: 0.5em 1em;
     background-color: var(--btn-color);
-    color: white;
+    color: var(--third-color);
     font-size: 500;
     border-radius: 0.5em;
     margin-top: 1em;
